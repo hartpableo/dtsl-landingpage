@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root{
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    background: url(images/background-image.webp) no-repeat center/cover;
+    position: relative;
+    isolation: isolate;
+    padding: 0 15px;
+}
+
+body::before{
+    content: "";
+    background: #fff;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.86;
+}
+
+.landing-page__content{
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page__content--logo{
+    max-width: 100%;
+    margin-bottom: 1.6em;
+}
+
+.landing-page__content--title{
+    background: #FF574A;
+    background: linear-gradient(to bottom, #FF574A 25%, #FFA14A 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5.6rem;
+}
+
+.landing-page__content--comingsoon{
+    letter-spacing: -5px;
+    font-size: 4rem;
+    color: #8429F2;
+    font-weight: bold;
+}
+
+.landing-page__content--comingsoon span{
+    display:inline-block;
+    animation:wave 850ms infinite;
+    animation-delay:calc(60ms * var(--i));
+}
+
+@keyframes wave {
+  0% {
+    transform:translateY(0);
+  }
+  50% {
+    transform:translateY(-5px);
+  }
+  100% {
+    transform:translateY(0);
+  }
+}
+
+@media only screen and (max-width:900px) {
+    .landing-page__content--title{
+        font-size: 3.7rem;
+    }
+    .landing-page__content--comingsoon {
+        letter-spacing: -4.3px;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .landing-page__content--title{
+        line-height: 1.25;
+        margin-bottom: .7em;
+    }
+
+}
